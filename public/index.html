@@ -1,43 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#28A745" />
+
+    <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="İddaaslani Pro - Yapay zeka destekli futbol tahminleriyle kazancınızı artırın!"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta
+      name="keywords"
+      content="bahis, futbol tahminleri, AI bahis tahminleri, VIP üyelik, Banko Kupon, iddia tahminleri, tahmin, kupon, İddaa Aslani, kumar, bedava kupon "
+    />
+    <meta name="author" content="İddaaslani Pro" />
+    <meta name="robots" content="index, follow" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!-- Open Graph Meta Tags (Facebook & LinkedIn) -->
+    <meta property="og:title" content="İddaaslani Pro - AI Destekli Futbol Tahminleri" />
+    <meta property="og:description" content="Kazancınızı artırmak için en iyi tahminler burada!" />
+    <meta property="og:image" content="https://yourwebsite.com/banner.jpg" />
+    <meta property="og:url" content="https://yourwebsite.com/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="İddaaslani Pro - AI Destekli Futbol Tahminleri" />
+    <meta name="twitter:description" content="Kazancınızı artırmak için en iyi tahminler burada!" />
+    <meta name="twitter:image" content="https://yourwebsite.com/banner.jpg" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>BankoKupon Pro - AI Destekli Futbol Tahminleri</title>
+
+    <!-- Lazy Loading Destekleyen Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll("img[data-src]");
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.removeAttribute("data-src");
+              obs.unobserve(img);
+            }
+          });
+        });
+        images.forEach((img) => observer.observe(img));
+      });
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>Web sitemizi tam deneyimlemek için JavaScript'i etkinleştirin.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
